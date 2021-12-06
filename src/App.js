@@ -20,7 +20,7 @@ function App() {
       count = 1,
       indicator;
 
-    async function test() {
+    async function loop() {
       while (!board[locationX][locationY]) {
         await new Promise((r) => setTimeout(r, 200));
         setLocations(`${locationX + 1}, ${locationY + 1}`);
@@ -49,7 +49,7 @@ function App() {
           setFakeBoard(board);
         }
     }
-    test();
+    loop();
   };
 
   return (
